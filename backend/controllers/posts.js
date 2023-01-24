@@ -9,23 +9,16 @@ const { Post } = db.sequelize.models;
 
 // Ajouter un post
 exports.addPost = (req, res) => {
-    // if (req.body.title == null || req.body.content == null) {
-    //     return res.status(400).json({ error: 'Champ(s) manquant(s)'});
-    // }else{
         const post = {
             title: req.body.title,
             content: req.body.content,
             image: req.file ? `${req.protocol}://${req.get('host')}/images/${req.file.filename}`: null,
             UserId: req.auth.userId
         };
-    //         if (req.body.title === null || req.body.content === null) {
-    //     return res.status(400).json({ error: 'Champ(s) manquant(s)'});
-    // }else{
 
         Post.create(post)
             .then(() => res.status(201).json({ message: 'post créé' }))
             .catch(erreur => res.status(400).json({ erreur }));
-    // }
 };
 
 //Afficher tous les posts
@@ -85,8 +78,6 @@ exports.deletePost = (req, res) => {
     Post.findOne({ where: {id: id} })
     .then((post) => {
          if(post.UserId == req.auth.userId || req.auth.isAdmin == true) {
-            //  console.log(UserId)
-            //  console.log(req.auth.isAdmin)
             Comment.destroy({ where: {PostId: id}})
             .then(() => {
                 console.log(post)

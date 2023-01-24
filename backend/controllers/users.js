@@ -140,14 +140,10 @@ exports.modifyCompte = (req, res, next) => {
       })
         .then(() => res.status(201).json({ message: 'Compte modifié !' }))
         .catch(error => res.status(400).json({ error }));
-
     }
-
 
     }else{
       return res.status(400).json({ error: 'Unauthorized request!'});
-    
-
     }
   })
   
@@ -167,12 +163,6 @@ exports.updateRole = (req, res, next) => {
           return res.status(400).json({ message: "Seul un administrateur peut modifier le role !"})
         }
 }
-
-
-
-
-
-  
 
 exports.deleteCompte = (req, res, next) => {
   User.findOne({where: {id: req.params.id }})

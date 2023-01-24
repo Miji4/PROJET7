@@ -65,7 +65,6 @@ data() {
   },
 
   created() {
-      //const userId = localStorage.getItem('userId');
       const token = localStorage.getItem('token');
       axios.get('http://localhost:3000/api/users' , {
          headers: { Authorization: "Bearer " + token}
@@ -74,9 +73,6 @@ data() {
           console.log(response.data);
           this.user = response.data.User;
           console.log(this.user)
-          // for(const user of this.user){
-          //   this.show[user.id] = false
-          // }
       })
       .catch(error => console.log(error));
   },
@@ -101,7 +97,6 @@ data() {
                 console.log(response)
                 alert('le role a bien été mise à jour!');
                 document.location.reload();
-                // window.location.href='/home'
             })
             .catch(error => console.log(error));  
           
@@ -129,11 +124,7 @@ deleteUser(userId){
                 document.location.reload()
             })
             .catch(error => console.log(error));
-
-
         },
-
-
 
   },
 
