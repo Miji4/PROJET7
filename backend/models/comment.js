@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Comment.belongsTo(models.Post)
       models.Comment.belongsTo(models.User)
-      //models.Comment.belongsTo(models.Comment)
-      //models.Comment.hasMany(models.Comment)
     }
   };
   Comment.init({
