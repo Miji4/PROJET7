@@ -55,9 +55,6 @@ export default {
         username: "",
         password: "",
         isAdmin: "",
-        Newusername: "",
-        Newemail: "",
-        Newpassword: "",
       }
   },
 

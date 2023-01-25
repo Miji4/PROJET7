@@ -1,7 +1,6 @@
 <template>
 <div>
   <bar-navigation/>
-    <!-- <div id="container"> -->
       <b-card-group>
         <b-card
         header="Users"
@@ -12,12 +11,12 @@
           <b-list-group :id="`role${user.id}`" style= "border-bottom-style:inset" v-for="user in user" :key="user.id" >
                 <h5>username : {{user.username}}</h5>
                 <p>email : {{user.email}}</p>
-                <p>Date de création : {{ dateFormat(user.createdAt)}}</p>
+                <p>Date de création : {{dateFormat(user.createdAt)}}</p>
 
                 <div class="form-group" :id="`form-groupe${user.id}`">
                     <label for="role">Statut Admin : {{user.isAdmin}}</label>
                     <b-row>
-                      <b-col lg="6" class="pb-2"><b-button  class="mt-3" block @click="deleteUser(user.id)" >Supprimer</b-button></b-col> 
+                      <b-col lg="6" class="pb-2"><b-button  class="mt-3" block @click="deleteUser(user.id)">Supprimer</b-button></b-col> 
                       <b-col lg="6" class="pb-2"><b-button  title="Modifier ce poste" v-b-modal:[`modal-${user.id}`] class="mt-3" block>Mettre a jour</b-button></b-col> 
                       <b-modal :id="`modal-${user.id}`"  title="Modifier le statut de l'utilisateur">
                           <div class="modal-body mx-3">
@@ -36,7 +35,6 @@
           </b-list-group>
         </b-card>
       </b-card-group>
-    <!-- </div> -->
 
 </div>
           
@@ -54,7 +52,7 @@ export default {
 
 data() {
       return {
-        User:[],
+        //User:[],
         user:"",
         email: "",
         username: "",
@@ -108,7 +106,6 @@ data() {
           }
       },
 // supprimer un compte utilisateur
-
 deleteUser(userId){
             const token = localStorage.getItem('token');
             console.log(userId)

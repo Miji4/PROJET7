@@ -49,7 +49,6 @@ export default {
     },
     data () {
         return {
-            comments: {},
             posts: [],
             post:"",
             comment:"",
@@ -60,7 +59,6 @@ export default {
             isAdmin:"",
             createdAt: null,
             user:"",
-            users: [],
             userId: localStorage.getItem('userId'),
             submited: false,
             show: false,
@@ -95,7 +93,6 @@ methods : {
 
     displayPost(){
         const token = localStorage.getItem('token');
-        //const userId = localStorage.getItem('userId');
         const id = this.$route.params.id;       
         axios.get('http://localhost:3000/api/posts/'+ id ,{
             headers: { 

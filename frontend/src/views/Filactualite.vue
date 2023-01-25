@@ -121,7 +121,6 @@ export default {
     },
     data () {
         return {
-            comments: {},
             posts: [],
             post:"",
             comment:"",
@@ -134,7 +133,6 @@ export default {
             isAdmin:"",
             createdAt: null,
             user:"",
-            users: [],
             submited: false,
             show: false,
         }
@@ -254,7 +252,6 @@ export default {
             let fd = new FormData();
             fd.append('title', this.title);
             fd.append('content', this.content);
-            //fd.append('image', this.image);
             if (this.image !== null) {
             fd.append('image', this.image)
             }
