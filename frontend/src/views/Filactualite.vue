@@ -185,6 +185,8 @@ export default {
 
 // create post
         createPost(){
+            if(!this.userId){
+                return alert('Veuillez vous connectez!')}
             if(this.title.length<2 ){
             return alert("le titre n'est pas valide")
             }
