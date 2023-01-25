@@ -51,8 +51,6 @@ data(){
             console.log("localstorage Cleared");
             localStorage.clear();
             this.$router.push('/');
-            document.location.reload();
-
         }
     }
 
@@ -94,6 +92,7 @@ nav.navbar.navbar.navbar-expand\{-sm\|-md\|-lg\|-xl\}.navbar-dark.bg-dark.navbar
   font-size: small;
   flex-flow: nowrap;
   align-items: center;
+  width: 300px;
 }
 
 }
