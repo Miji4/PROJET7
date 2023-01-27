@@ -95,9 +95,13 @@ exports.login = (req, res) => {
 // recuperer utilisateur
 
 exports.getAllUser = (req, res, next) => {
+  if (req.auth.isAdmin == true) {
     User.findAll()
      .then(User => res.status(200).json({ User }))
      .catch(error => res.status(400).json({ error }));
+  }else{
+    return res.status(400).json({ error: 'Unauthorized request!'});
+  }
  };
 
 exports.getOneUser = (req, res, next) => {

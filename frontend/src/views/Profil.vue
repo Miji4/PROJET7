@@ -97,7 +97,7 @@ export default {
             .then(response => {
                 console.log(response)
                 alert('Votre profil a été mise à jour!');
-                document.location.reload();
+                location.reload();
             })
             .catch(error => console.log(error));
         },

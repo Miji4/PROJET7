@@ -10,7 +10,7 @@ router.post('/login', userCtrl.login);
 router.get('/:id',auth, userCtrl.getOneUser)
 router.get('/',auth, userCtrl.getAllUser)
 router.put('/:id',auth, userCtrl.modifyCompte)
-
+router.get('/utilisateurs', auth,userCtrl.getAllUser)
 
 router.put('/isAdmin/:id', auth, userCtrl.updateRole)
 router.delete('/:id',auth, userCtrl.deleteCompte)

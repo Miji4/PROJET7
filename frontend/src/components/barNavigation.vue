@@ -51,6 +51,7 @@ data(){
             console.log("localstorage Cleared");
             localStorage.clear();
             this.$router.push('/');
+            //window.location.reload()
         }
     }
 
@@ -96,5 +97,15 @@ nav.navbar.navbar.navbar-expand\{-sm\|-md\|-lg\|-xl\}.navbar-dark.bg-dark.navbar
 }
 
 }
+
+@media screen and(max-width: 600px) {
+nav.navbar.navbar.navbar-expand\{-sm\|-md\|-lg\|-xl\}.navbar-dark.bg-dark.navbar-expand {
+    max-height: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+  }
+
 
 </style>
